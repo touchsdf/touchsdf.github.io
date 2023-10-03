@@ -1,8 +1,8 @@
-# Nerfies
+# TouchSDF
 
-This is the repository that contains source code for the [Nerfies website](https://nerfies.github.io).
+Project page for the paper `TouchSDF: A DeepSDF Approach to 3D Shape Reconstruction Using Vision-Based Tactile Sensing`.
 
-If you find Nerfies useful for your work please cite:
+Templated forked from:
 ```
 @article{park2021nerfies
   author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},

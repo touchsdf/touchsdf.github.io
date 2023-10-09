@@ -4,23 +4,10 @@
   <meta charset="utf-8">
   <meta name="description"
         content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
-  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <!-- <meta name="keywords" content="Nerfies, D-NeRF, NeRF"> -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nerfies: Deformable Neural Radiance Fields</title>
+  <title>TouchSDF</title>
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-
-    gtag('config', 'G-PYVRSFMDRL');
-  </script>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
@@ -46,7 +33,7 @@
 </head>
 <body>
 
-<nav class="navbar" role="navigation" aria-label="main navigation">
+<!-- <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
       <span aria-hidden="true"></span>
@@ -84,7 +71,7 @@
     </div>
 
   </div>
-</nav>
+</nav> -->
 
 
 <section class="hero">
@@ -107,7 +94,7 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2011.12948"
+                <a href="documents/supplementary.pdf"
                    class="external-link button is-normal is-rounded btn-grad">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -116,7 +103,7 @@
                 </a>
               </span>
 
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href="https://arxiv.org/abs/2011.12948"
                    class="external-link button is-normal is-rounded btn-grad">
                   <span class="icon">
@@ -124,7 +111,7 @@
                   </span>
                   <span>arXiv</span>
                 </a>
-              </span>
+              </span> -->
 
               <!-- Video Link. -->
               <!-- <span class="link-block">
@@ -144,7 +131,7 @@
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
-                  <span>Code</span>
+                  <span>Code (coming soon..)</span>
                   </a>
               </span>
 
@@ -252,6 +239,10 @@
 
       <img src="./static/images/architecture_3.jpg" alt="Image"> 
 
+    </div>
+
+    <div class="content has-text-justified">
+      Overview of TouchSDF: (1) A robot samples the object's surface to obtain real tactile images (marker patterns) that are translated into simulated images (depth maps). (2) A Convolutional Neural Network (CNN) maps the simulated images to sets of 3D points representing the local object surface at the touch locations. (3) A pre-trained DeepSDF model predicts a continuous signed-distance function (SDF) representing the object shape from the point clouds over multiple contacts. The latent codes $\mathbf{z_i}$ are 128-dimensional embeddings encoding the object's shape, while $\mathbf{x}$ represents a three-dimensional coordinate.
     </div>
 
     <!-- Paper video. -->

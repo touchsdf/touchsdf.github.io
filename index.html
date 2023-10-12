@@ -28,6 +28,10 @@
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
 
+  <!-- Render objects -->
+  <!-- Import the component -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
   <!-- Custom CSS -->
   <link rel="stylesheet" href="./static/css/custom.css">
 </head>
@@ -72,7 +76,6 @@
 
   </div>
 </nav> -->
-
 
 <section class="hero">
   <div class="hero-body">
@@ -126,7 +129,7 @@
 
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/google/nerfies"
+                <a href=""
                    class="external-link button is-normal is-rounded btn-grad">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -276,11 +279,13 @@
           </p>
         </div>
       </div>
+      
     </div>
     <!--/ Abstract. -->
 
     <!-- Paper video. -->
     <div class="columns is-centered has-text-centered">
+
       <div class="column is-four-fifths">
         <h2 class="title is-3">Video</h2>
         <div class="publication-video">
@@ -290,9 +295,35 @@
         </div>
       </div>
     </div>
-    <!--/ Paper video. -->
+
+
   </div>
 </section>
+
+<section class="section">
+
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+
+      <model-viewer src="documents/eagle.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="1.4" exposure="0.57" shadow-softness="1">
+        <div class="progress-bar hide" slot="progress-bar">
+            <div class="update-bar"></div>
+        </div>
+        <button slot="ar-button" id="ar-button">
+            View in your space
+        </button>
+        <div id="ar-prompt">
+            <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
+        </div>
+      </model-viewer>
+
+    </div>
+  </div>
+
+</section>
+
+
 
 
 <footer class="footer">

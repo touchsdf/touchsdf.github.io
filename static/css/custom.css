@@ -16,6 +16,22 @@ model-viewer {
   margin: 0, auto;
 }
 
+.model-viewer-container {
+  position: relative;
+  display: inline-block;
+  margin: 20px; /* Adjust the margin as needed */
+}
+
+.overlay {
+  /*position: absolute;
+  /* top: 10px; /* Adjust the top position to place the text where you want */
+  /* left: 10px; /*Adjust the left position to place the text where you want
+  background-color: rgba(255, 255, 255, 0.7); /* Background color for the overlay */
+  padding: 5px; /* Adjust padding as needed */
+  font-size: 20px; /* Adjust the font size as needed */
+  font-weight: bold; /* Adjust the font weight as needed */
+  border-radius: 5px; /* Rounded corners for the overlay */
+}
   /* .btn-grad:hover {
     background-position: right center; // change the direction of the change here 
     color: #fff;

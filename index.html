@@ -245,7 +245,7 @@
     </div>
 
     <div class="content has-text-justified">
-      Overview of TouchSDF: (1) A robot samples the object's surface to obtain real tactile images (marker patterns) that are translated into simulated images (depth maps). (2) A Convolutional Neural Network (CNN) maps the simulated images to sets of 3D points representing the local object surface at the touch locations. (3) A pre-trained DeepSDF model predicts a continuous signed-distance function (SDF) representing the object shape from the point clouds over multiple contacts. The latent codes $\mathbf{z_i}$ are 128-dimensional embeddings encoding the object's shape, while $\mathbf{x}$ represents a three-dimensional coordinate.
+      Overview of TouchSDF: (1) A robot samples the object's surface to obtain real tactile images (marker patterns) that are translated into simulated images (depth maps). (2) A Convolutional Neural Network (CNN) maps the simulated images to sets of 3D points representing the local object surface at the touch locations. (3) A pre-trained DeepSDF model predicts a continuous signed-distance function (SDF) representing the object shape from the point clouds over multiple contacts.
     </div>
 
     <!-- Paper video. -->
@@ -272,10 +272,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-          Humans rely on their visual and tactile senses to develop a comprehensive 3D understanding of their physical environment. Recently, there has been a growing interest in exploring and manipulating objects using data-driven approaches that utilise high-resolution vision-based tactile sensors. However, 3D shape reconstruction using tactile sensing has lagged behind visual shape reconstruction because of limitations in existing techniques, including the inability to generalise over unseen shapes, absence of real-world testing and limited expressive capacity imposed by discrete representations.
-          </p>
-          <p>
-          To address these challenges, we propose <b>TouchSDF</b>, a Deep Learning approach for tactile 3D shape reconstruction that leverages the rich information provided by a vision-based tactile sensor and the expressivity of the implicit neural representation DeepSDF. This combination allows TouchSDF to reconstruct smooth and continuous 3D shapes from tactile inputs in simulation and real-world settings, opening up research avenues for robust 3D-aware representations and improved multimodal perception for robot manipulation.
+          Humans rely on their visual and tactile senses to develop a comprehensive 3D understanding of their physical environment. Recently, there has been a growing interest in exploring and manipulating objects using data-driven approaches that utilise high-resolution vision-based tactile sensors. However, 3D shape reconstruction using tactile sensing has lagged behind visual shape reconstruction because of limitations in existing techniques, including the inability to generalise over unseen shapes, absence of real-world testing and limited expressive capacity imposed by discrete representations. To address these challenges, we propose <b>TouchSDF</b>, a Deep Learning approach for tactile 3D shape reconstruction that leverages the rich information provided by a vision-based tactile sensor and the expressivity of the implicit neural representation DeepSDF. This combination allows TouchSDF to reconstruct smooth and continuous 3D shapes from tactile inputs in simulation and real-world settings, opening up research avenues for robust 3D-aware representations and improved multimodal perception for robot manipulation.
           </p>
         </div>
       </div>
@@ -284,17 +281,16 @@
     <!--/ Abstract. -->
 
     <!-- Paper video. -->
-    <div class="columns is-centered has-text-centered">
+    <!-- <div class="columns is-centered has-text-centered">
 
       <div class="column is-four-fifths">
         <h2 class="title is-3">Video</h2>
         <div class="publication-video">
           Coming soon...
-          <!-- Add video here -->
 
         </div>
       </div>
-    </div>
+    </div> -->
 
 
   </div>
@@ -305,20 +301,63 @@
   <div class="container is-max-desktop">
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
-
-      <model-viewer src="documents/eagle.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="1.4" exposure="0.57" shadow-softness="1">
-        <div class="progress-bar hide" slot="progress-bar">
-            <div class="update-bar"></div>
-        </div>
-        <button slot="ar-button" id="ar-button">
-            View in your space
-        </button>
-        <div id="ar-prompt">
-            <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
-        </div>
-      </model-viewer>
-
+      <h2 class="title is-3">Reconstructions: ShapeNet</h2>
     </div>
+
+    <div class="columns is-centered has-text-centered" style="margin-top: 20px;">
+      <p>You can interact with the Ground truth and Reconstructed meshes below to assess the quality of our 3D shape reconstruction approach.</p>
+    </div>
+  
+    <!-- Camera -->
+    <div class="columns is-centered has-text-centered">
+      <div class="model-viewer-container">
+        <div class="overlay">Ground truth</div>
+        <model-viewer id="camera_gt" src="documents/meshes/camera_gt.glb" camera-controls shadow-intensity="1.4" exposure="0.9 shadow-softness="1" auto-rotate rotation-per-second="40deg">
+        </model-viewer>
+      </div>
+      <div class="model-viewer-container">
+        <div class="overlay">Reconstruction</div>
+        <model-viewer id="camera_rec" src="documents/meshes/camera_rec.glb" camera-controls shadow-intensity="1.4" exposure="0.9  shadow-softness="1" auto-rotate rotation-per-second="40deg">
+        </model-viewer>
+      </div>
+    </div>
+    
+    <!-- Bottle -->
+    <div class="columns is-centered has-text-centered">
+      <model-viewer id="bottle_rec" src="documents/meshes/bottle_gt.glb" camera-controls shadow-intensity="1.4" exposure="0.9" shadow-softness="1" auto-rotate rotation-per-second="40deg">
+      </model-viewer>
+      <model-viewer id="bottle_gt" src="documents/meshes/bottle_rec.glb" camera-controls shadow-intensity="1.4" exposure="0.9" shadow-softness="1" auto-rotate rotation-per-second="40deg">
+      </model-viewer>
+    </div>
+
+    <!-- Mug -->
+    <div class="columns is-centered has-text-centered">
+        <model-viewer id="mug_gt" src="documents/meshes/mug_gt.glb" camera-controls shadow-intensity="1.4" exposure="0.9" shadow-softness="1" auto-rotate rotation-per-second="40deg">
+        </model-viewer>
+        <model-viewer id="mug_rec" src="documents/meshes/mug_rec.glb" camera-controls shadow-intensity="1.4" exposure="0.9" shadow-softness="1" auto-rotate rotation-per-second="40deg">
+        </model-viewer>
+    </div>
+
+    <!-- Guitar -->
+    <div class="columns is-centered has-text-centered">
+      <model-viewer id="guitar_gt" src="documents/meshes/guitar_gt.glb" camera-controls shadow-intensity="1.1" exposure="0.9shadow-softness="1" auto-rotate rotation-per-second="40deg">
+      </model-viewer>
+      <model-viewer id="guitar_rec" src="documents/meshes/guitar_rec.glb" camera-controls shadow-intensity="1.1" exposure="0.9" shadow-softness="1" auto-rotate rotation-per-second="40deg">
+      </model-viewer>
+    </div>
+
+    <script>
+      const elementIds = ['camera_gt', 'camera_rec', 'bottle_gt', 'bottle_rec', 'guitar_gt', 'guitar_rec', 'mug_gt', 'mug_rec'];
+      elementIds.forEach(elementId => {
+        const modelViewerColor = document.querySelector(`model-viewer#${elementId}`);
+        if (modelViewerColor) {
+          modelViewerColor.addEventListener('load', () => {
+          const [material] = modelViewerColor.model.materials;
+          material.pbrMetallicRoughness.setBaseColorFactor("#fd8c3e");
+          });
+        }
+      });
+    </script>
   </div>
 
 </section>
